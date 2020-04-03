@@ -1,5 +1,8 @@
 package _10
 
+// 2020.04.03
+// https://leetcode-cn.com/problems/regular-expression-matching/
+
 func isMatch(s string, p string) bool {
 	const (
 		T_MATCH_ANY = '*'
