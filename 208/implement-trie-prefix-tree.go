@@ -1,5 +1,6 @@
 package _208
 
+// 2020.04.07
 type Trie struct {
 	Root *Node
 }

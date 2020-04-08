@@ -1,5 +1,6 @@
 package _211
 
+// // 2020.04.07
 // https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/
 type WordDictionary struct {
 	Root *Node
