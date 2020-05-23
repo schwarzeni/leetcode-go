@@ -1,6 +1,6 @@
 # LeetCode 练习
 
-[homepage](https://leetcode-cn.com/u/schwarzeni/)
+[homepage](https://leetcode-cn.com/u/schwarzeni)
 
 ## 数学
 
