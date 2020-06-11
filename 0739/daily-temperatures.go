@@ -12,17 +12,33 @@ package _0739
 // - 若T[i] > T[i+1]
 // `   - res[i+1]=0，那么res[i]=0;
 // `   - res[i+1]!=0，那就比较T[i]和T[i+1+res[i+1]]（即将第i天的温度与比第i+1天大的那天的温度进行比较
+//func dailyTemperatures(T []int) []int {
+//	res := make([]int, len(T))
+//	for i := len(T) - 2; i >= 0; i-- {
+//		for j := i + 1; j < len(T); j += res[j] {
+//			if T[i] < T[j] {
+//				res[i] = j - i
+//				break
+//			} else if res[j] == 0 {
+//				break
+//			}
+//		}
+//	}
+//	return res
+//}
+
+// solution 2
+// 单调栈
 func dailyTemperatures(T []int) []int {
 	res := make([]int, len(T))
-	for i := len(T) - 2; i >= 0; i-- {
-		for j := i + 1; j < len(T); j += res[j] {
-			if T[i] < T[j] {
-				res[i] = j - i
-				break
-			} else if res[j] == 0 {
-				break
-			}
+	var stack []int
+	for idx, t := range T {
+		for len(stack) > 0 && t > T[stack[len(stack)-1]] {
+			pIdx := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			res[pIdx] = idx - pIdx
 		}
+		stack = append(stack, idx)
 	}
 	return res
 }
